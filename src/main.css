@@ -6,7 +6,7 @@
 }
 
 .next-arrow {
-  right: 0;
+  right: 0px;
   cursor: pointer;
 
 }
@@ -15,7 +15,6 @@
   cursor: pointer;
   z-index: 999;
 }
-
 .slick-arrow:hover {
   color: #ff5d1d;
 }
@@ -39,11 +38,9 @@
   height: 100%;
   object-fit: cover;
 }
-
 .top-icon svg {
   padding: 10px;
 }
-
 svg {
   margin: 0 !important;
 }
@@ -52,23 +49,19 @@ svg {
   height: 100%;
   overflow-y: auto;
 }
-
 .cart-img {
   text-align: center;
 }
-
 .cart-img img {
   object-fit: cover;
   width: 80px;
 }
-
 .cart-img li {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 10px;
 }
-
 .input-group-btn button {
   background-color: black;
   color: white;

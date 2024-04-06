@@ -1,20 +1,21 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./fontAwesome";
-import { Cart } from "../common/Cart";
+import Cart from "../common/Cart";
 import { useSelector } from "react-redux";
 
-export const Icons = () => {
-  const {totalItems} = useSelector((state) => state.cart);
+const Icons = () => {
+  const { totalItems } = useSelector((state) => state.cart);
+
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const showRightBar = useCallback(() => {
+  const showRightBar = () => {
     setShowSidebar(true);
-  }, []);
+  };
 
-  const hideRightBar = useCallback(() => {
+  const hideRightBar = () => {
     setShowSidebar(false);
-  }, []);
+  };
 
   return (
     <>
@@ -33,12 +34,12 @@ export const Icons = () => {
           />
           {showSidebar && (
             <div className="fixed top-15 right-0 w-80">
-              <Cart/>
+              <Cart />
               <span
                 className="absolute top-2 right-2 cursor-pointer text-gray-600"
                 onClick={hideRightBar}
               >
-                <FontAwesomeIcon icon="fa fa-close"/>
+                <FontAwesomeIcon icon="fa fa-close" />
               </span>
             </div>
           )}
@@ -50,3 +51,5 @@ export const Icons = () => {
     </>
   );
 };
+
+export default Icons;

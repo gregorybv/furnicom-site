@@ -1,11 +1,11 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { sliderdata } from "../data/Data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Sliders = () => {
+const Sliders = () => {
   const sliderRef = useRef(null);
 
   const settings = {
@@ -32,7 +32,7 @@ export const Sliders = () => {
       <Slider ref={sliderRef} {...settings}>
         {sliderdata.map((img, index) => (
           <div key={index}>
-            <img className="w-full" src={img.img} alt="img"/>
+            <img className="w-full" src={img.img} alt="img" />
           </div>
         ))}
       </Slider>
@@ -50,3 +50,5 @@ export const Sliders = () => {
     </div>
   );
 };
+
+export default Sliders;

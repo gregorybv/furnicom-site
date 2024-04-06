@@ -1,4 +1,6 @@
-export const ContactUs = () => {
+import React from "react";
+
+const ContactUs = () => {
   return (
     <div className="contact-us-container">
       <div className="m-16">
@@ -25,8 +27,10 @@ export const ContactUs = () => {
         </div>
       </div>
       <div className="sticky-background">
-        <img src="./img/banners/id1-banner2.jpg" alt="img"/>
+        <img src="./img/banners/id1-banner2.jpg" alt="img" />
       </div>
     </div>
   );
 };
+
+export default ContactUs;

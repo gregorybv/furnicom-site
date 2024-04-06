@@ -1,12 +1,12 @@
 import { products } from "../data/Data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Heading } from "../common/Heading";
+import Heading from "../common/Heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
-export const BestSeller = () => {
-  const settings = {
+const Category = () => {
+  var settings = {
     responsive: [
       {
         breakpoint: 1024,
@@ -34,8 +34,10 @@ export const BestSeller = () => {
     const newItems = products.filter((item) => item.name === name);
     setMenuItem(newItems);
 
+    // for all data show
     if (name === "all") {
       setMenuItem(products);
+      return;
     }
   };
 
@@ -95,8 +97,7 @@ export const BestSeller = () => {
                 alt={item.name}
                 className="mx-auto h-full w-full hover:shadow-md transition-all duration-300 bg-cover"
               />
-              <div
-                className="icons absolute top-0 right-0 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="icons absolute top-0 right-0 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="flex flex-wrap flex-col  p-2 mr-1 mt-1">
                   <FontAwesomeIcon
                     className="p-2 mb-1 bg-white hover:bg-red-500 hover:text-white"
@@ -131,3 +132,5 @@ export const BestSeller = () => {
     </div>
   );
 };
+
+export default Category;

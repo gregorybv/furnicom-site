@@ -1,7 +1,8 @@
+import React from "react";
 import { aweicon, footer } from "../data/Data";
 import "./../main.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className="bg-white text-black py-8 px-4">
       <div className="flex justify-between">
@@ -12,7 +13,7 @@ export const Footer = () => {
                 <div className="text-2xl font-semibold mb-2">{val.header}</div>
                 <div
                   className="flex"
-                  style={{display: "flex", flexDirection: "column"}}
+                  style={{ display: "flex", flexDirection: "column" }}
                 >
                   {val.title.map((item, subIndex) => (
                     <span
@@ -27,7 +28,7 @@ export const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="w-1/2 p-6 bg-gray-100 rounded-lg shadow-md">
+        <div class="w-1/2 p-6 bg-gray-100 rounded-lg shadow-md">
           <h1 className="text-2xl font-semibold mb-4">
             SIGN UP FOR NEWSLETTER
           </h1>
@@ -38,12 +39,12 @@ export const Footer = () => {
             type="text"
             name="text"
             placeholder="Your Email Address..."
-            className="w-2/3 p-4 border border-gray-300 rounded mb-4"
+            class="w-2/3 p-4 border border-gray-300 rounded mb-4"
           />
           <button
             type="button"
             name="btn"
-            className="bg-black text-white pt-4 pb-4 p-6 ml-4 rounded hover:bg-red-600"
+            class="bg-black text-white pt-4 pb-4 p-6 ml-4 rounded hover:bg-red-600"
           >
             SUBSCRIBE
           </button>
@@ -63,3 +64,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;

@@ -9,29 +9,29 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./../main.css";
-import { Heading } from "../common/Heading";
+import Heading from "../common/Heading";
 
 const NextArrow = (props) => (
   <div {...props} className="slick-arrow next-arrow">
-    <FontAwesomeIcon icon={faChevronRight}/>
+    <FontAwesomeIcon icon={faChevronRight} />
   </div>
 );
 
 const PrevArrow = (props) => (
   <div {...props} className="slick-arrow prev-arrow">
-    <FontAwesomeIcon icon={faChevronLeft}/>
+    <FontAwesomeIcon icon={faChevronLeft} />
   </div>
 );
 
-export const Popular = () => {
-  const settings = {
+const Popular = () => {
+  var settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -73,8 +73,7 @@ export const Popular = () => {
                       alt={item.category}
                       className="mx-auto h-full w-full object-cover"
                     />
-                    <div
-                      className="icons absolute top-0 right-0 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="icons absolute top-0 right-0 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="flex flex-wrap flex-col  p-2 mr-1 mt-1">
                         <FontAwesomeIcon
                           className="p-2 mb-1 bg-white hover:bg-red-500 hover:text-white"
@@ -125,3 +124,5 @@ export const Popular = () => {
     </div>
   );
 };
+
+export default Popular;

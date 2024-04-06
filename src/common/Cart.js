@@ -3,9 +3,9 @@ import "./../main.css";
 import { useEffect } from "react";
 import { getCartTotal, removeItem, updateQuantity } from "../redux/cartSlice";
 
-export const Cart = () => {
+const Cart = () => {
   const dispatch = useDispatch();
-  const {data: cartProducts, totalAmount} = useSelector(
+  const { data: cartProducts, totalAmount } = useSelector(
     (state) => state.cart
   );
 
@@ -14,17 +14,17 @@ export const Cart = () => {
   }, [useSelector((state) => state.cart)]);
 
   const handleRemoveItem = (itemId) => {
-    dispatch(removeItem({id: itemId}));
+    dispatch(removeItem({ id: itemId }));
   };
 
   const increaseQty = (cartProductId, currentQty) => {
     const newQty = currentQty + 1;
-    dispatch(updateQuantity({id: cartProductId, quantity: newQty}));
+    dispatch(updateQuantity({ id: cartProductId, quantity: newQty }));
   };
 
   const decreaseQty = (cartProductId, currentQty) => {
     const newQty = Math.max(currentQty - 1, 1);
-    dispatch(updateQuantity({id: cartProductId, quantity: newQty}));
+    dispatch(updateQuantity({ id: cartProductId, quantity: newQty }));
   };
   return (
     <div className="bg-white p-4">
@@ -39,7 +39,7 @@ export const Cart = () => {
             {cartProducts.map((item, index) => (
               <li key={index} className="mb-2">
                 <div>
-                  <img className="img" src={item.img} alt={item.img}/>
+                  <img className="img" src={item.img} alt={item.img} />
                   <p className="font-semibold">{item.name}</p>
                   <p className="ml-2 text-gray-600">${item.price}</p>
                 </div>
@@ -85,3 +85,5 @@ export const Cart = () => {
     </div>
   );
 };
+
+export default Cart;

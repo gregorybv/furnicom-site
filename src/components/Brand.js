@@ -1,4 +1,4 @@
-import { category } from "../data/Data";
+import { brand } from "../data/Data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -11,25 +11,25 @@ import "./../main.css";
 
 const NextArrow = (props) => (
   <div {...props} className="slick-arrow next-arrow">
-    <FontAwesomeIcon icon={faChevronRight}/>
+    <FontAwesomeIcon icon={faChevronRight} />
   </div>
 );
 
 const PrevArrow = (props) => (
   <div {...props} className="slick-arrow prev-arrow">
-    <FontAwesomeIcon icon={faChevronLeft}/>
+    <FontAwesomeIcon icon={faChevronLeft} />
   </div>
 );
 
-export const Category = () => {
-  const settings = {
+const Brand = () => {
+  var settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
-    nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,26 +53,25 @@ export const Category = () => {
   };
 
   return (
-    <div className="bg-white m-10 overflow-hidden text-center relative">
-      <Slider {...settings}>
-        {category.map((item, index) => (
-          <div key={index}>
-            <div className="max-w-xs m-4 transition-transform transform hover:scale-105 hover:text-red-600">
-              <div className="bg-gray-100 p-12 hover:bg-white hover:shadow-md transition-all duration-300">
+    <div className="w-full bg-white">
+      <div className="m-10 overflow-hidden text-center relative">
+        <Slider {...settings}>
+          {brand.map((item, index) => (
+            <div key={index}>
+              <div className="max-w-xs m-4">
                 <img
-                  src={item.img}
+                  src={item.brand}
                   title={item.category}
                   alt={item.category}
-                  className="mx-auto"
+                  className="mx-auto opacity-50 hover:opacity-100 transition-all duration-300"
                 />
-                <div className="mt-4">
-                  <div className="font-semibold uppercase">{item.category}</div>
-                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
+
+export default Brand;

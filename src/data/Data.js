@@ -29,22 +29,22 @@ export const nav = [
 
 export const aweicon = [
   {
-    icon: <FontAwesomeIcon className="mr-4" icon="heart"/>,
+    icon: <FontAwesomeIcon className="mr-4" icon="heart" />,
   },
   {
-    icon: <FontAwesomeIcon className="mr-4" icon="shopping-cart"/>,
+    icon: <FontAwesomeIcon className="mr-4" icon="shopping-cart" />,
   },
   {
-    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "facebook"]}/>,
+    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "facebook"]} />,
   },
   {
-    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "instagram"]}/>,
+    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "instagram"]} />,
   },
   {
-    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "youtube"]}/>,
+    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "youtube"]} />,
   },
   {
-    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "twitter"]}/>,
+    icon: <FontAwesomeIcon className="mr-4" icon={["fab", "twitter"]} />,
   },
 ];
 

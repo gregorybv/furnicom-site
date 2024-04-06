@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Icons } from "../components/Icons";
+import Icons from "../components/Icons";
 import { nav } from "../data/Data";
-import { NavItem } from "../components/NavItem";
+import NavItem from "../components/NavItem";
 
-export const Header = () => {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleToggleMenu = useCallback(() => {
+  const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
-  }, []);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,7 +31,7 @@ export const Header = () => {
         menuOpen ? "fixed inset-0 bg-gray-800 bg-opacity-50 z-50" : "hidden"
       } sm:hidden`}
       onClick={handleToggleMenu}
-      style={{zIndex: "9999"}}
+      style={{ zIndex: "9999" }}
     ></div>
   );
 
@@ -44,7 +44,7 @@ export const Header = () => {
       >
         <div className="flex justify-between p-2 pl-5 pr-4 items-center flex-wrap">
           <div className="sm:hidden">
-            {menuOpen ? "" : <FaBars onClick={handleToggleMenu}/>}
+            {menuOpen ? "" : <FaBars onClick={handleToggleMenu} />}
           </div>
           <div>
             <Link to={"/"} className="font-bold text-3xl">
@@ -58,7 +58,7 @@ export const Header = () => {
                 ? "transform translate-x-0"
                 : "transform -translate-x-full"
             } sm:flex bg-white fixed inset-y-0 left-0 z-50 w-64 overflow-y-auto transition-transform ease-in-out duration-300`}
-            style={{zIndex: "11111"}}
+            style={{ zIndex: "11111" }}
           >
             <FaTimes
               onClick={handleToggleMenu}
@@ -66,8 +66,8 @@ export const Header = () => {
             />
             <ul className="flex flex-col p-4 m-8 font-bold">
               {nav.map((list, key) => (
-                <div key={key} className="mb-3">
-                  <NavItem to={list.path} label={list.text}/>
+                <div className="mb-3">
+                  <NavItem key={key} to={list.path} label={list.text} />
                 </div>
               ))}
             </ul>
@@ -75,12 +75,12 @@ export const Header = () => {
           <div className="hidden sm:flex">
             <ul className="flex font-semibold uppercase">
               {nav.map((items, index) => (
-                <NavItem key={index} to={items.path} label={items.text}/>
+                <NavItem key={index} to={items.path} label={items.text} />
               ))}
             </ul>
           </div>
           <div className="top-icon">
-            <Icons/>
+            <Icons />
           </div>
         </div>
       </div>
